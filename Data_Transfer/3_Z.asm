@@ -30,20 +30,20 @@ ExitProcess PROTO, dwExitCode: DWORD
 		sub CX, AX
 		add CX, BX
 
-		mov AX, x ;load X into AX
-		mov BX, y ;load y into BX
-		mov CX, r ;load r into CX
-		add AX, BX ;add y to x
-		add AX, CX ;add r to x
-		mov z, eax ;store EAX TO Z_0
+		mov AX, x
+		mov BX, y 
+		mov CX, r 
+		add AX, BX 
+		add AX, CX 
+		mov z, eax
 
-		add BX, r ;add r to y
-		sub BX, AX ;calculate y+r-Z_0
-		mov z+4, ebx ;Z_1= y+r-Z_0
+		add BX, r 
+		sub BX, AX 
+		mov z+4, ebx 
 
-		add BX, y ;add Z_1 + y
-		add BX, AX ;calculate (Z_1 + y) + Z_0
-		mov z+8, ebx ;Z_2 = (Z_1 + y) + Z_0
+		add BX, y 
+		add BX, AX 
+		mov z+8, ebx 
 		
 		INVOKE ExitProcess, 0
 	main ENDP
