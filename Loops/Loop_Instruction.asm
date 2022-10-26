@@ -9,13 +9,13 @@ ExitProcess PROTO, dwExitCode: DWORD
 
 .code
 	main PROC
-		mov edi, 0						          ; 1. initialize index
-		mov ecx,LENGTHOF intarray		    ; 2: initialize loop counter
+		mov edi,0 			; 1. initialize index
+		mov ecx,LENGTHOF intarray	; 2: initialize loop counter
 		mov eax,0                       ; 3: sum = 0
 		L1:                             ; 4: mark beginning of loop
 		add eax, intarray[edi]          ; 5: add an integer
 		add edi,TYPE intarray           ; 6: point to next element
-		loop L1							            ; 7: repeat until ECX = 0
+		loop L1				; 7: repeat until ECX = 0
 		
 		INVOKE ExitProcess, 0
 	main ENDP
